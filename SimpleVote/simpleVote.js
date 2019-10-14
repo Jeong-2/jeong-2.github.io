@@ -248,7 +248,7 @@ function getTokenInfo() {
   simpleVote.getTotalCount(function(e,r){
     document.getElementById('tickets-total').innerHTML = r.toString();
   });
-  simpleVote.getSellableTicket(function(e,r){
+  simpleVote.getSellableCount(function(e,r){
     document.getElementById('tickets-sellable').innerHTML = r.toString();
   });
 /*
