@@ -1,4 +1,4 @@
-let contractAddress = '0xe91792b215cdc8059234e11e5f969df70b2c20f6';
+let contractAddress = '0x7cc63cb33427d5d319fcf82164a4120f080c5e54';
 let abi =
 [
 	{
@@ -120,20 +120,6 @@ let abi =
 	{
 		"constant": true,
 		"inputs": [],
-		"name": "getCandiatesTicket",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
 		"name": "token_Price",
 		"outputs": [
 			{
@@ -154,6 +140,20 @@ let abi =
 			}
 		],
 		"name": "candidates_ticket",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getCandidatesTicket",
 		"outputs": [
 			{
 				"name": "",
@@ -273,7 +273,7 @@ function getTokenInfo() {
 
 
 function getCandidateInfo() {
-  simpleVote.getCandiatesTicket(function(e,r){
+  simpleVote.getCandidatesTicket(function(e,r){
     for(let i=1;i<=r.length;i++)
     {
       document.getElementById('day_votes_' + i).innerHTML = r[i-1].toString();
