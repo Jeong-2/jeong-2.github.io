@@ -1,4 +1,4 @@
-let contractAddress = '0x466a456ac76116467080e26b1cf237eda84ea74b';
+let contractAddress = '0xcb85859b80e204ff693434406e3c795df4af82aa';
 let abi =
 [
 	{
@@ -113,6 +113,20 @@ let abi =
 		"constant": true,
 		"inputs": [],
 		"name": "getTicketCount",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getTicketPrice",
 		"outputs": [
 			{
 				"name": "",
@@ -270,17 +284,6 @@ function getCandidateInfo() {
       document.getElementById('day_votes_' + i).innerHTML = r[i-1].toString();
     }
   });
-}
-
-
-function getCandidateInfo() {
-      document.getElementById('day_votes_1').innerHTML = "Monday";
-      document.getElementById('day_votes_2').innerHTML = "Tuesday";
-      document.getElementById('day_votes_3').innerHTML = "Wednesday";
-      document.getElementById('day_votes_4').innerHTML = "Thursday";
-      document.getElementById('day_votes_5').innerHTML = "Friday";
-      document.getElementById('day_votes_6').innerHTML = "Saturday";
-      document.getElementById('day_votes_7').innerHTML = "Sunday";
 }
 
 function voteForCandidate() {
