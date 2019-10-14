@@ -1,4 +1,4 @@
-let contractAddress = '0xdb8914f0d06743218889acc0d811122622600fb9';
+let contractAddress = '0xe91792b215cdc8059234e11e5f969df70b2c20f6';
 let abi =
 [
 	{
@@ -227,11 +227,6 @@ function startApp() {
   accountAddress = r[0];
   getValue();
   });
-
-  var accounts = web3.eth.getAccounts();
-  document.getElementById('accountAddr').innerHTML = getLink(accounts[0]);
-  accountAddress = accounts[0];
-  getValue();
 }
 
 function getLink(addr) {
