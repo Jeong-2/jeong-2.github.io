@@ -251,27 +251,27 @@ function getTokenInfo() {
   simpleVote.getSellableCount(function(e,r){
     document.getElementById('tickets-sellable').innerHTML = r.toString();
   });
-/*
+
   simpleVote.getTicketPrice(function(e,r){
     tokenPrice = parseFloat(web3.fromWei(r.toString()));
     document.getElementById('ticket-cost').innerHTML = tokenPrice + "ETH";
   });
-*/
+
   web3.eth.getBalance(simpleVote.address, function(e,v) {
     document.getElementById('contract-balance').innerHTML = web3.fromWei(v.toString()) + "ETH";
   });
 }
 
-/*
+
 function getCandidateInfo() {
-  simpleVote.getTicketsReceive(function(e,r){
+  simpleVote.getCandidatesTicket(function(e,r){
     for(let i=1;i<=r.length;i++)
     {
       document.getElementById('day_votes_' + i).innerHTML = r[i-1].toString();
     }
   });
 }
-*/
+
 
 function getCandidateInfo() {
       document.getElementById('day_votes_1').innerHTML = "Monday";
