@@ -1,13 +1,79 @@
-let contractAddress = '0x4a8c5cbb1f9e2656d0ca12cea51f3ffbb6fa6751';
+let contractAddress = '0xdb8914f0d06743218889acc0d811122622600fb9';
 let abi =
 [
 	{
-		"constant": false,
+		"constant": true,
 		"inputs": [],
-		"name": "buy",
-		"outputs": [],
-		"payable": true,
-		"stateMutability": "payable",
+		"name": "getTicketCount",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "total_count",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getTotalCount",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getTicketPrice",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "candidates_Name",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -29,33 +95,50 @@ let abi =
 		"type": "function"
 	},
 	{
-		"inputs": [
+		"constant": true,
+		"inputs": [],
+		"name": "sellable_count",
+		"outputs": [
 			{
-				"name": "total",
-				"type": "uint256"
-			},
-			{
-				"name": "price",
+				"name": "",
 				"type": "uint256"
 			}
 		],
 		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "constructor"
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "buy",
+		"outputs": [],
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "function"
 	},
 	{
 		"constant": true,
-		"inputs": [
+		"inputs": [],
+		"name": "getCandiatesTicket",
+		"outputs": [
 			{
 				"name": "",
 				"type": "uint256"
 			}
 		],
-		"name": "candidates_Name",
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "token_Price",
 		"outputs": [
 			{
 				"name": "",
-				"type": "bytes32"
+				"type": "uint256"
 			}
 		],
 		"payable": false,
@@ -84,20 +167,6 @@ let abi =
 	{
 		"constant": true,
 		"inputs": [],
-		"name": "getCandiatesTicket",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
 		"name": "getSellableCount",
 		"outputs": [
 			{
@@ -110,88 +179,19 @@ let abi =
 		"type": "function"
 	},
 	{
-		"constant": true,
-		"inputs": [],
-		"name": "getTicketCount",
-		"outputs": [
+		"inputs": [
 			{
-				"name": "",
+				"name": "total",
+				"type": "uint256"
+			},
+			{
+				"name": "price",
 				"type": "uint256"
 			}
 		],
 		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "getTicketPrice",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "getTotalCount",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "sellable_count",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "token_Price",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "total_count",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
+		"stateMutability": "nonpayable",
+		"type": "constructor"
 	}
 ];
 let simpleVoteContract;
@@ -228,10 +228,10 @@ function startApp() {
   getValue();
   });
 
-  /*var accounts = web3.eth.getAccounts();
+  var accounts = web3.eth.getAccounts();
   document.getElementById('accountAddr').innerHTML = getLink(accounts[0]);
   accountAddress = accounts[0];
-  getValue();*/
+  getValue();
 }
 
 function getLink(addr) {
