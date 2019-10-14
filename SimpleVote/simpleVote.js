@@ -1,4 +1,4 @@
-let contractAddress = '0x7cc63cb33427d5d319fcf82164a4120f080c5e54';
+let contractAddress = '0xbc763550865dfd208653579681632f4d18aa8ab4';
 let abi =
 [
 	{
@@ -157,7 +157,7 @@ let abi =
 		"outputs": [
 			{
 				"name": "",
-				"type": "uint256"
+				"type": "uint256[]"
 			}
 		],
 		"payable": false,
